@@ -1,0 +1,23 @@
+version: "3.9"
+# https://github.com/qbittorrent/docker-qbittorrent-nox/tree/main -- followed guide from  here.
+services:
+  qbittorrent-nox:
+    container_name: qbittorrent-nox
+    # updated env vars from https://github.com/qbittorrent/docker-qbittorrent-nox/blob/main/.env
+    environment:
+      - QBT_EULA=accept
+      - QBT_VERSION=latest
+      - QBT_WEBUI_PORT=9090
+    image: qbittorrentofficial/qbittorrent-nox:latest
+    ports:
+      - 6881:6881/tcp
+      - 6881:6881/udp
+      - 9090:9090/tcp
+    read_only: false
+    stop_grace_period: 30m
+    tmpfs:
+      - /tmp
+    tty: true
+    volumes:
+      - ./qbt-run/config:/config
+      - ./qbt-run/downloads:/downloads

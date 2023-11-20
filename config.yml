@@ -1,0 +1,9 @@
+---
+database:
+  tdownloader_db.csv: ""
+downloads:
+  - completed
+  - running
+  - torrent-files:
+      - completed
+      - running

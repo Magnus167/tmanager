@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tmanager"
+version = "20231118"
+authors = [{ name = "Magnus167" }]
+description = "A simple torrent manager"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.6"
+dependencies = [
+    "requests>=2.25.1",
+    "tqdm>=4.59.0",
+    "libtorrent>=2.0.4",
+    "Flask>=3.0.0",
+]
+
+[project.urls]
+Home = "https://github.com/Magnus167/tmanager"
+Documentation = "https://github.com/Magnus167/tmanager/blob/main/README.md"
+
+
+[tool.setuptools]
+platforms = ["Windows", "Linux", "Mac OS-X"]
+
+[tool.setuptools.packages.find]
+include = ["tmanager", "tmanager.*"]
